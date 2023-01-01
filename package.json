@@ -8,6 +8,9 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
+  "engines": {
+    "node": "12.x"
+  },
   "private": true,
   "dependencies": {
     "@angular/cli": "^9.0.7",
