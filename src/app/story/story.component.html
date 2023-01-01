@@ -1,0 +1,53 @@
+<!-- Import Materialize CSS styles -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+<!-- Container element -->
+<div class="container">
+  <!-- Card element to display a story -->
+  <div class="card">
+    <!-- Card image -->
+    <div class="card-image waves-effect waves-block waves-light">
+      <!-- <img src="{{ story.imageUrl }}"> -->
+      <!-- <span class="card-title">{{ story.title }}</span> -->
+      <h1>Interlingo</h1>
+      <form #storyForm="ngForm" (ngSubmit)="makeRequest(storyForm)">
+        <p>{{ "Make a " + storyLevel + " " + storyStyle + " about " + storyTopic + " in " + storyLanguage + " langunage, of " + storyLength + " sentences long."}}</p>
+        <input type="text" name="storyLevel" [(ngModel)]="storyLevel" placeholder="very simple">
+        <input type="text" name="storyStyle" [(ngModel)]="storyStyle" value="story">
+        <input type="text" name="storyTopic" [(ngModel)]="storyTopic" placeholder="topic">
+        <input type="text" name="storyLanguage" [(ngModel)]="storyLanguage" placeholder="language">
+        <input type="text" name="storyLength" [(ngModel)]="storyLength" placeholder="3">
+
+        <button class="btn waves-effect waves-light" type="submit">Generate</button>
+      </form>
+    <!-- Card content -->
+    <div class="card">
+      <!-- Story-->
+      <p *ngIf="story">{{ story.choices[0].text }}</p>
+      <div *ngIf="isTranslationReady">
+      <!-- <div> -->
+        <div class="row">
+            <p>Translate to:</p>
+            <input type="text" name="translationLanguage" [(ngModel)]="translationLanguage" placeholder="language">
+            <div class="col-4">
+                <div class="card">
+                    <p *ngIf="translatedStory">{{ translatedStory.choices[0].text }}</p>
+                </div>
+        <button class="btn waves-effect waves-light margin" (click)="makeTranslation()" >Translate</button>
+        <button class="btn waves-effect waves-light margin" (click)="makeConversation()" >Read a conversation</button>
+        <button class="btn waves-effect waves-light margin" (click)="practiceVocab()" >Practice Vocabulary</button>
+        <button class="btn waves-effect waves-light margin" >Ask Qustions</button>
+        <div class="card">
+            <p *ngIf="newText">{{ newText.choices[0].text }}</p>
+            <div *ngIf="isConversationReady">
+            <button class="btn waves-effect waves-light margin-right" (click)="translateNewText()" >Translate</button>
+            <p *ngIf="translatedConversation">{{ translatedConversation.choices[0].text }}</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Import Materialize JS scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

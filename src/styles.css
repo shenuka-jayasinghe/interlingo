@@ -1,0 +1,14 @@
+.card .card-image .card-title {
+    color: #fff;
+    background: black;
+    margin: 2em;
+}
+
+.card .card-image {
+    position: relative;
+    margin: 2em;
+}
+
+.margin {
+    margin: 2em;
+}
