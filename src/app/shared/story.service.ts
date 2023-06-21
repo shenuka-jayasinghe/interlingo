@@ -18,7 +18,7 @@ export class StoryService {
   postStory(stry: Story){
     const headers= new HttpHeaders()
   .set('content-type', 'application/json')
-  .set('Authorization', 'Bearer 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');
+  .set('Authorization', 'Bearer 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');
     
     return this.http.post(this.baseURL, stry,  { 'headers': headers });
   }

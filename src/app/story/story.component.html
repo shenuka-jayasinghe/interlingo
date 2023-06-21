@@ -11,7 +11,7 @@
       <!-- <span class="card-title">{{ story.title }}</span> -->
       <h1>Interlingo</h1>
       <form #storyForm="ngForm" (ngSubmit)="makeRequest(storyForm)">
-        <p>{{ "Make a " + storyLevel + " " + storyStyle + " about " + storyTopic + " in " + storyLanguage + " langunage, of " + storyLength + " sentences long."}}</p>
+        <p>{{ "Make a " + storyLevel + " " + storyStyle + " about " + storyTopic + " in " + storyLanguage + " language, of " + storyLength + " sentences long."}}</p>
         <input type="text" name="storyLevel" [(ngModel)]="storyLevel" placeholder="very simple">
         <input type="text" name="storyStyle" [(ngModel)]="storyStyle" value="story">
         <input type="text" name="storyTopic" [(ngModel)]="storyTopic" placeholder="topic">
