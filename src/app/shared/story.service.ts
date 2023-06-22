@@ -3,8 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
+import { environment } from './environmnt.prod';
+
 
 import { Story } from '../shared/story.model'
+
+
+const apiKey = environment.apiKey;
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +23,7 @@ export class StoryService {
   postStory(stry: Story){
     const headers= new HttpHeaders()
   .set('content-type', 'application/json')
-  .set('Authorization', 'Bearer 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');
+  .set('Authorization', apiKey);
     
     return this.http.post(this.baseURL, stry,  { 'headers': headers });
   }
