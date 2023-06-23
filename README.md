@@ -1,7 +1,7 @@
 # Intelingo
 
 Use Chat GPT to learn most languages through short sentences and stories of any topic of interest.
-I am currently using this to learn Lithuanian so they are prefilled my real-use case.
+I am currently using this to learn Lithuanian so they are prefilled for my real-use case.
 
 A test demo version is deployed on AWS EC2 running on NGINX webserver;
 
